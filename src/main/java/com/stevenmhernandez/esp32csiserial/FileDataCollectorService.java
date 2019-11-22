@@ -12,10 +12,19 @@ import java.io.IOException;
 public class FileDataCollectorService extends BaseDataCollectorService {
     private String LOG_TAG = "FileDataCollectorService";
     private FileOutputStream localBackup = null;
+    public String filePrefix;
+
+    public FileDataCollectorService() {
+        this.filePrefix = "backup";
+    }
+
+    public FileDataCollectorService(String filePrefix) {
+        this.filePrefix = filePrefix;
+    }
 
     public void setup(Context context) {
         try {
-            File test = new File(context.getExternalFilesDir(null), "backup" + System.currentTimeMillis() + ".csv");
+            File test = new File(context.getExternalFilesDir(null), filePrefix + System.currentTimeMillis() + ".csv");
             localBackup = new FileOutputStream(test, true);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
