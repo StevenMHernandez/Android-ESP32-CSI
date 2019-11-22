@@ -1,6 +1,6 @@
 # ESP32 CSI Serial for Android
 
-For root `build.gradle`
+## `build.gradle`
 
 ```
 allprojects {
@@ -11,7 +11,7 @@ allprojects {
 }
 ```
 
-For app `build.gradle`, add all of the belo
+## `app/build.gradle`
 
 ```
 android {
@@ -22,11 +22,15 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
+dependencies {
+    implementation project(path: ':ESP32CSISerial')
+}
 ```
 
-In your `AndroidManifest.xml` add:
-
+## `AndroidManifest.xml`
 ```
+
 <manifest>
 <uses-permission android:name="android.permission.INTERNET"/>                       // <- Add this
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>           // <- Add this
@@ -40,6 +44,12 @@ In your `AndroidManifest.xml` add:
 <service android:name="com.stevenmhernandez.esp32csiserial.UsbService" />           // <- Add this
 </application>
 <manifest>
+```
+
+## `settings.gradle`
+
+```
+include ':app', ':ESP32CSISerial'
 ```
 
 ## Attach to an activity
