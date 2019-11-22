@@ -121,12 +121,8 @@ public class ESP32CSISerial {
                 case UsbService.MESSAGE_FROM_SERIAL_PORT:
                     String data = (String) msg.obj;
 
-                    if (data.contains("CSI_DATA")) {
-                        listener.addCsi(data);
-                    }
-
-                    if (data.contains("\n")) {
-                        String[] split = data.split("\n");
+                    if (data.contains("\r\n")) {
+                        String[] split = data.split("\r\n");
 
                         String line;
                         if (split.length > 0) {
