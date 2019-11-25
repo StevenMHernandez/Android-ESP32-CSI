@@ -1,5 +1,10 @@
 # ESP32 CSI Serial for Android
 
+
+'File > New > Import Module > Select this directory'
+
+In your project perform the following tasks:
+
 ## `build.gradle`
 
 ```
