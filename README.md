@@ -1,7 +1,7 @@
 # ESP32 CSI Serial for Android
 
 
-'File > New > Import Module > Select this directory'
+`File > New > Import Module > Select this directory`
 
 In your project perform the following tasks:
 
@@ -67,7 +67,7 @@ In your MainActivity (or any activity you choose)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         . . .
-        csiSerial.setup(this, "rock_paper_scissors");
+        csiSerial.setup(this, "your_project_name");
         csiSerial.onCreate(this);
     }
 
