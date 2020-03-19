@@ -12,9 +12,9 @@ This library allows the app to listen for data on USB OTG from an ESP32 microcon
 
 ## Setup Your Custom Android Application
 
-`git clone https://github.com/StevenMHernandez/ESP32CSISerial.git ESP32CSISerial`
+`git clone https://github.com/StevenMHernandez/Android-ESP32-CSI.git ESP32CSISerial`
 
-`File > New > Import Module > {Select ESP32CSISerial directory}`
+`File > New > Import Module > {Select cloned ESP32CSISerial directory}`
 
 In your project perform the following tasks:
 
