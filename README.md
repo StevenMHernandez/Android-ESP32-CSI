@@ -1,11 +1,24 @@
-# ESP32 CSI Serial for Android
+# ESP32 CSI Serial (for Android)
 
+This Android library allows your own standard Android application to collect Wi-Fi Channel State Information (CSI). This library should work on any standard installed Android apps on most modern Android devices; no custom Android firmware updates are required.
 
-`File > New > Import Module > Select this directory`
+## Requirements
+
+ESP32 microcontroller programmed with the [ESP32 CSI Toolkit](https://stevenmhernandez.github.io/ESP32-CSI-Tool/).
+
+USB OTG (On-the-go) Cable (typically micro-usb to micro-usb depending on Android device and ESP32 selected).
+
+This library allows the app to listen for data on USB OTG from an ESP32 microcontroller running [ESP32 CSI Toolkit](https://stevenmhernandez.github.io/ESP32-CSI-Tool/). CSI data is automatically parsed and returned to your app for further custom processing.
+
+## Setup Your Custom Android Application
+
+`git clone https://github.com/StevenMHernandez/ESP32CSISerial.git ESP32CSISerial`
+
+`File > New > Import Module > {Select ESP32CSISerial directory}`
 
 In your project perform the following tasks:
 
-## `build.gradle`
+### `build.gradle`
 
 ```
 allprojects {
@@ -16,7 +29,7 @@ allprojects {
 }
 ```
 
-## `app/build.gradle`
+### `app/build.gradle`
 
 ```
 android {
@@ -33,7 +46,7 @@ dependencies {
 }
 ```
 
-## `AndroidManifest.xml`
+### `AndroidManifest.xml`
 ```
 
 <manifest>
@@ -51,13 +64,13 @@ dependencies {
 <manifest>
 ```
 
-## `settings.gradle`
+### `settings.gradle`
 
 ```
 include ':app', ':ESP32CSISerial'
 ```
 
-## Attach to an activity
+### Attach to an activity
 
 In your MainActivity (or any activity you choose)
 
